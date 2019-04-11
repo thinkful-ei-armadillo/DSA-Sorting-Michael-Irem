@@ -116,6 +116,19 @@ class LinkedList {
     }
     tempNode.next = new _Node(item, currNode);
   }
+
+  display(){
+    let currNode = this.head;
+    let llArr = [];
+    if(!this.head){
+      return null;
+    }
+    while(currNode !== null){
+      llArr.push(currNode.value);
+      currNode = currNode.next;
+    }
+    return llArr;
+  }
 }
 
 module.exports = LinkedList;
