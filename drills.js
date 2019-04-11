@@ -194,18 +194,23 @@ list.insertLast(8);
 
 // Bucket Sort
 function bucketSort(arr, low, high) {
+  const bucket = [];
   const result = [];
   for (let i = 0; i < high; i++) {
-    result[i] = '';
+    bucket[i] = '';
   }
   for (let i = 0; i < arr.length; i++) {
-    result[arr[i] - low] = arr[i];
+    bucket[arr[i] - low] = arr[i];
+  }
+  for(let i = 0; i < bucket.length; i++){
+    if(bucket[i] !== '') {
+      result.push(bucket[i]);}
   }
   return result;
 }
 
-let bucketData = [1, 4, 2, 3, 5];
-// console.log(bucketSort(bucketData, 1, 5));
+let bucketData = [1, 4, 2, 3, 21, 5];
+console.log('bucketSort', bucketSort(bucketData, 1, 21));
 
 // Sort in Place
 function sortInPlace(arr, counter = 0) {
@@ -233,4 +238,4 @@ function sortBooks(arr, start = 0, end = arr.length) {
   return arr;
 }
 
-console.log(sortBooks(books));
+// console.log(sortBooks(books));
